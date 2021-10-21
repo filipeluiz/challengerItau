@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, sans-serif;
+  border: none;
+}
+
+input, label {
+  display: block;
+  width: 100%;
+}
+
+input:focus, label:focus {
+  outline: none;
+}
+
+body {
+  padding-top: 10vh;
+  background-color: rgb(247,156,96);
+}
+
+.mainForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 100%;
+  background-color: #fff;
+  padding: 20px 10px;
+  border-radius: 10px;
+}
