@@ -4,12 +4,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Inspirado por você, o Itaú muda todo dia. O Itaú é feito com você!">
+  <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
   <title>Desafio Cadastro Pessoal - Atração</title>
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
   <h1 class="logotipo">
-    <a href="https://www.itau.com.br/">
+    <a href="https://www.itau.com.br/" target="_blank">
       <img src="./img/Banco_Itaú_logo.svg" alt="logotipo Itaú">
     </a>
   </h1>
@@ -21,7 +23,7 @@
         <input type="text" name="nome" id="nome" placeholder="Digite seu nome" required>
   
         <label for="sobrenome">Sobrenome: </label>
-        <input type="text" name="nome" id="nome" placeholder="Digite seu sobrenome">
+        <input type="text" name="sobrenome" id="nome" placeholder="Digite seu sobrenome">
       </div>
 
       <div class="box half">
@@ -42,7 +44,7 @@
         <label for="masculino">Masculino</label>
       </div>
       
-      <div class="box full">
+      <div class="box">
         <label for="cep">CEP:</label> 
         <input type="text" name="cep" id="cep" placeholder="Digite seu CEP">
       </div>
@@ -53,21 +55,23 @@
 
         <label for="numero">Nº:</label> 
         <input type="text" name="numero" id="numero" placeholder="Digite seu número">
+      </div>
 
-
+      <div class="box half">
         <label for="bairro">Bairro:</label> 
         <input type="text" name="bairro" id="bairro" placeholder="Digite seu bairro">
 
 
-        <label for="numero">Cidade:</label> 
+        <label for="cidade">Cidade:</label> 
         <input type="text" name="cidade" id="cidade" placeholder="Digite sua cidade">
-        
-        
-        <label for="numero">Estado:</label> 
+      </div>
+      
+      <div class="box">  
+        <label for="estado">Estado:</label> 
         <input type="text" name="estado" id="estado" placeholder="Digite seu estado">
       </div>
 
-      <div class="box full">
+      <div class="box">
         <label for="telFixo">Telefone Fixo:</label> 
         <input type="text" name="telFixo" id="telFixo" placeholder="Digite seu telefone fixo">
 
@@ -76,7 +80,7 @@
         <input type="text" name="cel" id="cel" placeholder="Digite seu número de Celular">       
       </div>
 
-      <div class="box full">
+      <div class="box">
         <input type="submit" id="submit" value="Cadastrar dados">
       </div>
 

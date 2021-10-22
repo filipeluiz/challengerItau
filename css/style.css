@@ -35,59 +35,100 @@ body {
 }
 
 .mainForm {
+  max-width: 845px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 95%;
   background-color: #fff;
-  padding: 10px 5px;
-  border-radius: 10px;
+  padding: 10px;
+  border-radius: 20px;
 }
 
 .mainForm h2 {
   font-size: 2.2rem;
   text-align: center;
-  margin-bottom: 25px;
-}
-
-.mainForm form {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: space-between;
+  margin: 30px 0;
 }
 
 .box {
-  flex: 1 1;
-  position: relative;
-  padding: 0 30px;
+  padding: 0 5px;
 }
 
 label {
+  font-size: 1.5rem;
   font-weight: bold;
-  font-size: 1.3rem;
+  margin-bottom: 8px;
 }
 
 input {
-  border-bottom: 1px solid #323232;
+  border-radius: 8px;
+  background-color: #E8EBF0;
   padding: 10px;
   font-size: 1.4rem;
   margin-bottom: 40px;
 }
 
 input:focus {
-  border-color: rgb(20,0,131);
+  background-color: #9B9EA3;
+  transition: .2s all;
+}
+
+input:focus::placeholder {
+  color: #fff;
 }
 
 input[type="submit"] {
+  margin: 0 auto;
+  max-width: 420px;
   background-color: rgb(119,182,216);
   font-weight: bold;
   color: #fff;
   border: none;
   border-radius: 20px;
   cursor: pointer;
+  padding: 15px
 }
 
 .gender {
   display: flex;
+}
+
+.gender input, .gender label {
+  width: auto;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+
+/* Desktop */
+
+@media (min-width: 780px) {
+
+  .mainForm {
+    padding: 20px;
+  }
+
+  .mainForm h2 {
+    font-size: 2.6rem;
+    margin: 40px 0;
+  }
+
+  .half {
+    display: flex;
+    align-items: baseline;
+  }
+
+  .half input {
+    min-width: 35%;
+  }
+
+  .half label {
+    width: 25%;
+  }
+
+  .half input[name="nome"], .half input[name="cpf"],
+  .half input[name="endereco"], .half input[name="bairro"] {
+    margin-right: 10px;
+  }
 }
