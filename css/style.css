@@ -62,6 +62,7 @@ label {
 }
 
 input {
+  border: 2px solid #fff;
   border-radius: 8px;
   background-color: #E8EBF0;
   padding: 10px;
@@ -70,12 +71,9 @@ input {
 }
 
 input:focus {
-  background-color: #9B9EA3;
+  background-color: rgb(205, 227, 240);
+  border: 2px solid #000;
   transition: .2s all;
-}
-
-input:focus::placeholder {
-  color: #fff;
 }
 
 input[type="submit"] {
@@ -151,12 +149,16 @@ input[type="submit"] {
   animation: show_slide 1s ease forwards;
 }
 
+.inputError {
+  border: 2px solid #f7717e;
+  /* background-color: #f8d7da; */
+}
+
 @keyframes show_slide {
   0% {
     transform: translateX(100%);
   }
 }
-
 
 /* Desktop */
 @media (min-width: 780px) {
