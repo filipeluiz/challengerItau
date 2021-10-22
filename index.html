@@ -9,7 +9,7 @@
   <title>Desafio Cadastro Pessoal - Atração</title>
   <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
+<body> 
   <h1 class="logotipo">
     <a href="https://www.itau.com.br/" target="_blank">
       <img src="./img/Banco_Itaú_logo.svg" alt="logotipo Itaú">
@@ -37,10 +37,10 @@
       <div class="box gender">
         <label for="feminino">Sexo:</label> 
 
-        <input type="radio" name="feminino" id="feminino">
+        <input type="radio" name="gender" id="feminino" value="feminino">
         <label for="feminino">Feminino</label>
 
-        <input type="radio" name="masculino" id="masculino">
+        <input type="radio" name="gender" id="masculino" value="masculino">
         <label for="masculino">Masculino</label>
       </div>
       
@@ -51,10 +51,10 @@
 
       <div class="box half">
         <label for="endereco">Endereço:</label> 
-        <input type="text" name="endereco" id="endereco" placeholder="Digite seu endereço">
+        <input type="text" name="endereco" id="endereco" placeholder="Digite seu endereço" required>
 
         <label for="numero">Nº:</label> 
-        <input type="text" name="numero" id="numero" placeholder="Digite seu número">
+        <input type="text" name="numero" id="numero" placeholder="Digite seu número" required>
       </div>
 
       <div class="box half">
@@ -77,17 +77,22 @@
 
 
         <label for="cel">Celular:</label> 
-        <input type="text" name="cel" id="cel" placeholder="Digite seu número de Celular">       
+        <input type="text" name="cel" id="cel" placeholder="Digite seu número de Celular" required>       
       </div>
 
       <div class="box">
         <input type="submit" id="submit" value="Cadastrar dados">
       </div>
-
-    </form>
+    </form> 
   </main>
-
-
-
+  <div class="alert sucess" role="alert">
+    <i class="icon sucessIcon"></i>
+    <span class="msg">Seus dados foram enviados com sucesso!!!</span>
+  </div>
+  <div class="alert error" role="alert">
+    <i class="icon erroIcon"></i>
+    <span class="msg"></span>
+  </div>    
+  <script src="./js/main.js"></script>
 </body>
 </html>
