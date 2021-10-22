@@ -1,8 +1,17 @@
+'use strict';
+
 const form = document.getElementById('register');
 const alert = document.querySelector('.alert');
 const icon = document.querySelector('.icon');
 const msg = document.querySelector('.msg');
 const cpfDOM = document.querySelector('#cpf');
+const cep = document.querySelector("#cep");
+const endereco = document.querySelector("#endereco");
+const bairro = document.querySelector("#bairro");
+const cidade = document.querySelector("#cidade");
+const estado = document.querySelector("#estado");
+const phone = document.querySelector("#telFixo");
+const cel = document.querySelector("#cel");
 
 const alerts = (type) => {
   alert.classList.add('show');
@@ -23,9 +32,6 @@ const alerts = (type) => {
     icon.classList.add('sucessIcon');
     alert.classList.remove('error');
     icon.classList.remove('erroIcon');
-    if(type == "sucess") {
-      form.reset();
-    }
   }, 5000)  
 }
 
@@ -56,6 +62,7 @@ const validCPF = (event) => {
     if(`${fisrtDigit}${secondDigit}` == digit) {
       alerts("sucess");
       msg.innerHTML = "Seus dados foram enviados com sucesso!!!"
+      form.reset();
     }
     else {
       alerts("error");
@@ -71,5 +78,27 @@ const validCPF = (event) => {
   event.preventDefault();
 }
 
+const consumoCepAPI = async() => {
+  const cpes = cep.value.replace(/[^0-9]/g, "");
+  const url = `https://viacep.com.br/ws/${cpes}/json/`;
+  const data = await fetch(url);
+  const address = await data.json();
+
+  if(cpes.length == 8) {
+    endereco.value = address.logradouro;
+    bairro.value = address.bairro;
+    cidade.value = address.localidade;
+    estado.value = address.uf;
+    phone.value = `(${address.ddd})`;
+    cel.value = `(${address.ddd})`;
+  }
+  else {
+    alerts("error");
+    cep.classList.add('inputError');
+    msg.innerHTML = "CEP é inválido"    
+  }
+
+}
 
 form.addEventListener('submit', validCPF);
+cep.addEventListener('focusout', consumoCepAPI)
